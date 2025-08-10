@@ -1,0 +1,578 @@
+/* Reset some defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #fefefe;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* HEADER */
+header {
+  background-color: #0d4d4d;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  transition: background 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #118888;
+  border-radius: 4px;
+}
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: url('images/hero-bg.jpg') no-repeat center/cover;
+  color: white;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero h1,
+.hero p,
+.hero .btn {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #0d4d4d;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #118888;
+}
+
+/* SECTION HEADINGS */
+section {
+  padding: 3rem 2rem;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #0d4d4d;
+}
+
+/* GRID LAYOUTS */
+.product-grid, .profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.product, .farmer {
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.product:hover, .farmer:hover {
+  transform: translateY(-5px);
+}
+
+.product h3, .farmer h3 {
+  margin: 1rem 0 0.5rem;
+  color: #333;
+}
+
+/* Learn + Blog Preview */
+.learn-preview ul,
+.blog-preview ul {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  padding: 0;
+}
+
+.learn-preview li,
+.blog-preview li {
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+}
+
+.learn-preview a,
+.blog-preview a {
+  color: #0d4d4d;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+.learn-preview a:hover,
+.blog-preview a:hover {
+  border-bottom: 1px solid #0d4d4d;
+}
+
+/* WHY SECTION */
+.why-afribicon p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* CTA SECTION */
+.cta {
+  background-color: #0d4d4d;
+  color: #fff;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.cta p {
+  margin: 1rem 0 2rem;
+}
+
+/* FOOTER */
+.site-footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 2rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.site-footer h3,
+.site-footer h4 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.site-footer a {
+  color: #ccc;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.site-footer a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+  color: #aaa;
+}
+
+/* Responsive typography */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+.hero-slider {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.slides-container {
+  position: relative;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  z-index: 0;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.slide-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.slide-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.slide-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.dot.active {
+  opacity: 1;
+}
+.farmer {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  text-align: center;
+  padding: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.farmer img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #0d4d4d;
+}
+
+.farmer:hover {
+  transform: translateY(-5px);
+}
+.learn-preview {
+  background-color: #f8fafa;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.learn-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+}
+
+.learn-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.learn-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.learn-card .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.learn-card h3 {
+  font-size: 1.2rem;
+  color: #0d4d4d;
+  margin-bottom: 0.5rem;
+}
+
+.learn-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.learn-card a {
+  font-weight: bold;
+  color: #0d4d4d;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+.learn-card a:hover {
+  border-bottom: 1px solid #0d4d4d;
+}
+
+.learn-btn {
+  margin-top: 1rem;
+}
+.learn-preview {
+  background-color: #f8fafa;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.learn-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+}
+
+.learn-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.learn-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.learn-card .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.learn-card h3 {
+  font-size: 1.2rem;
+  color: #0d4d4d;
+  margin-bottom: 0.5rem;
+}
+
+.learn-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.learn-card a {
+  font-weight: bold;
+  color: #0d4d4d;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+.learn-card a:hover {
+  border-bottom: 1px solid #0d4d4d;
+}
+
+.learn-btn {
+  margin-top: 1rem;
+}
+.learn-preview {
+  background-color: #f8fafa;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.learn-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+}
+
+.learn-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.learn-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.learn-card .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.learn-card h3 {
+  font-size: 1.2rem;
+  color: #0d4d4d;
+  margin-bottom: 0.5rem;
+}
+
+.learn-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.learn-card a {
+  font-weight: bold;
+  color: #0d4d4d;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+.learn-card a:hover {
+  border-bottom: 1px solid #0d4d4d;
+}
+
+.learn-btn {
+  margin-top: 1rem;
+}
+.learn-preview {
+  background-color: #f8fafa;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.learn-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+}
+
+.learn-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.learn-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.learn-card .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.learn-card h3 {
+  font-size: 1.2rem;
+  color: #0d4d4d;
+  margin-bottom: 0.5rem;
+}
+
+.learn-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.learn-card a {
+  font-weight: bold;
+  color: #0d4d4d;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+.learn-card a:hover {
+  border-bottom: 1px solid #0d4d4d;
+}
+
+.learn-btn {
+  margin-top: 1rem;
+}
